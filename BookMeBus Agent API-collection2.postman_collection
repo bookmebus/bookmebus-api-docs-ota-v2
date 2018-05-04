@@ -1,0 +1,426 @@
+{
+	"variables": [],
+	"info": {
+		"name": "BookMeBus Agent API",
+		"_postman_id": "6264e30c-1b3f-9624-4805-79da1c402e18",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/oauth/token?grant_type=client_credentials&client_id=e1effa3f35c2abebe41802c1eece769754993d33671cc03dd788545943d7cd33&client_secret=57365765a9f68e9f6ef8b60964483c6cee0b437139b1a3a37c0b1a6c6101b021",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/oauth/token?grant_type=client_credentials&client_id=e1effa3f35c2abebe41802c1eece769754993d33671cc03dd788545943d7cd33&client_secret=57365765a9f68e9f6ef8b60964483c6cee0b437139b1a3a37c0b1a6c6101b021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_id",
+							"value": "e1effa3f35c2abebe41802c1eece769754993d33671cc03dd788545943d7cd33",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_secret",
+							"value": "57365765a9f68e9f6ef8b60964483c6cee0b437139b1a3a37c0b1a6c6101b021",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tran_id",
+							"value": "12124260",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "hash",
+							"value": "69j7V+8B/ywey6K0PYmwPPkBep1cnN+eY+lwKDEQNJ9l3t9Jc7N3FjK3W+xmaFLnFt4XIbdvUM2EQBU6wjR/Sg==",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": "1 - Authenticate app using client  with Client Id  and Client Secret. You should receive the credential after signing BookMeBus OTA agreement.\n\n\n// Example ClientID/ClientSecret\n\nApp ID: f18e4288eb6cdddd24a725591cc9c3a14204bf57636ff6162c407e5ef6078a03\nApp Secret: de3b8f799733d8e1fec2443e0302d879ddad81e09143db84103675425a9493a2"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v2/trip_locations",
+			"request": {
+				"url": "http://localhost:3000/api/v2/trip_locations",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0ca8e090f6518e7e8c9c6a8d1beffc4b54ab222e36c07a834ba484ef170b9f65",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tran_id",
+							"value": "12124260",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "hash",
+							"value": "69j7V+8B/ywey6K0PYmwPPkBep1cnN+eY+lwKDEQNJ9l3t9Jc7N3FjK3W+xmaFLnFt4XIbdvUM2EQBU6wjR/Sg==",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": "2 - Fill in location"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v2/trip_availabilities?origin_id=1&destination_id=4&on_date=14/4/2020",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/api/v2/trip_availabilities?origin_id=1&destination_id=4&on_date=14/4/2020",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v2",
+						"trip_availabilities"
+					],
+					"query": [
+						{
+							"key": "origin_id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "destination_id",
+							"value": "4",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "on_date",
+							"value": "14/4/2020",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0ca8e090f6518e7e8c9c6a8d1beffc4b54ab222e36c07a834ba484ef170b9f65",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tran_id",
+							"value": "12124260",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "hash",
+							"value": "69j7V+8B/ywey6K0PYmwPPkBep1cnN+eY+lwKDEQNJ9l3t9Jc7N3FjK3W+xmaFLnFt4XIbdvUM2EQBU6wjR/Sg==",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": "3 - Search Trip from chosen locations"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v2/seat_layouts?trip_id=367&from_stop_id=6&to_stop_id=12&on_date=20/10/2018",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/api/v2/seat_layouts?trip_id=367&from_stop_id=6&to_stop_id=12&on_date=20/10/2018",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v2",
+						"seat_layouts"
+					],
+					"query": [
+						{
+							"key": "trip_id",
+							"value": "367",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "from_stop_id",
+							"value": "6",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "to_stop_id",
+							"value": "12",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "on_date",
+							"value": "20/10/2018",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0ca8e090f6518e7e8c9c6a8d1beffc4b54ab222e36c07a834ba484ef170b9f65",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tran_id",
+							"value": "12124260",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "hash",
+							"value": "69j7V+8B/ywey6K0PYmwPPkBep1cnN+eY+lwKDEQNJ9l3t9Jc7N3FjK3W+xmaFLnFt4XIbdvUM2EQBU6wjR/Sg==",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": "4 - Seat layout of a specific trip on a specific date"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v2/trip_reservations",
+			"request": {
+				"url": "http://localhost:3000/api/v2/trip_reservations",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0ca8e090f6518e7e8c9c6a8d1beffc4b54ab222e36c07a834ba484ef170b9f65",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"reservations\":[{\"trip_id\":367,\"from_stop_time_id\":1067,\"to_stop_time_id\":1068,\"reserved_seats\":{\"6\":[{\"label\":\"1A\",\"seat_type\":\"normal\",\"layer\":\"Downstair\",\"nationality\":\"local\",\"status\":\"pending\"},{\"label\":\"2A\",\"seat_type\":\"normal\",\"layer\":\"Downstair\",\"nationality\":\"local\",\"status\":\"pending\"}]},\"departure_date\":\"20/05/2020\",\"status\":\"pending\"}]}"
+				},
+				"description": "5 - Reserve a trip"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v2/wallet_payments?reservation_cart_id=iUswMAzwEAztzpuMrvyT8Q8s",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/api/v2/wallet_payments?reservation_cart_id=iUswMAzwEAztzpuMrvyT8Q8s",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v2",
+						"wallet_payments"
+					],
+					"query": [
+						{
+							"key": "reservation_cart_id",
+							"value": "iUswMAzwEAztzpuMrvyT8Q8s",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0ca8e090f6518e7e8c9c6a8d1beffc4b54ab222e36c07a834ba484ef170b9f65",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "6 - Choose BookMeBus Wallet Payment"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v2/bmb_wallets?payment_id=g4G1dv6eSRRSwvzG",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/api/v2/bmb_wallets?payment_id=g4G1dv6eSRRSwvzG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v2",
+						"bmb_wallets"
+					],
+					"query": [
+						{
+							"key": "payment_id",
+							"value": "g4G1dv6eSRRSwvzG",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0ca8e090f6518e7e8c9c6a8d1beffc4b54ab222e36c07a834ba484ef170b9f65",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "7 - Pay with BookMebus Wallet"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v2/trip_reservations/iUswMAzwEAztzpuMrvyT8Q8s",
+			"request": {
+				"url": "http://localhost:3000/api/v2/trip_reservations/iUswMAzwEAztzpuMrvyT8Q8s",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0ca8e090f6518e7e8c9c6a8d1beffc4b54ab222e36c07a834ba484ef170b9f65",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "8 - Show trip detail"
+			},
+			"response": []
+		}
+	]
+}
