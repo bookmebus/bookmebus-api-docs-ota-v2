@@ -1,0 +1,339 @@
+{
+	"variables": [],
+	"info": {
+		"name": "API V1",
+		"_postman_id": "f2977fb3-2a8b-6c78-0dfd-2c2121ef1045",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 - Authentication",
+			"request": {
+				"url": {
+					"raw": "https://bookmebus.com/oauth/token?grant_type=client_credentials&client_id=&client_secret=",
+					"protocol": "https",
+					"host": [
+						"bookmebus",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tran_id",
+							"value": "12124260",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "hash",
+							"value": "69j7V+8B/ywey6K0PYmwPPkBep1cnN+eY+lwKDEQNJ9l3t9Jc7N3FjK3W+xmaFLnFt4XIbdvUM2EQBU6wjR/Sg==",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2 - Fetch locations",
+			"request": {
+				"url": "https://bookmebus.com/api/v1/locations",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer xxx",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3 - Search Result",
+			"request": {
+				"url": {
+					"raw": "https://bookmebus.com/api/v1/ticket_searches?from=Sihanoukville&to=Siem Reap&on_date=07/07/2018",
+					"protocol": "https",
+					"host": [
+						"bookmebus",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ticket_searches"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "Sihanoukville",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "to",
+							"value": "Siem Reap",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "on_date",
+							"value": "07/07/2018",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer xxx",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4 - Seat layout",
+			"request": {
+				"url": {
+					"raw": "https://bookmebus.com/api/v1/vehicle_seat_availabilities?route_schedule_vehicle_id=525-4-12&on_date=07/07/2018",
+					"protocol": "https",
+					"host": [
+						"bookmebus",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"vehicle_seat_availabilities"
+					],
+					"query": [
+						{
+							"key": "route_schedule_vehicle_id",
+							"value": "525-4-12",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "on_date",
+							"value": "07/07/2018",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer xxx",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "5 - ticket cart",
+			"request": {
+				"url": "https://bookmebus.com/api/v1/ticket_carts",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer xxx",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tickets\":[\n\t\t{   \"route_schedule_vehicle_id\":\"525-4-12\",\n\t\t\t\"contact_email\":\"duyu@Ctrip.com\",\n\t\t\t\"address\":\"\",\n\t\t\t\"operator_id\":\"7\",\n\t\t\t\"is_request\":false,\n\t\t\t\"name\":\"XIAO HAI\",\n\t\t\t\"contact_phone\":\"13892868626\",\n\t\t\t\"gender\":\"male\",\n\t\t\t\"is_pickup\":1,\n\t\t\t\"departure_date\":\"07/07/2018\",\n\t\t\t\"note\":\"\",\"is_local\":0,\n\t\t\t\"vehicle_seat_id\":\"LOWER-DECK|1A\" },\n\t\t  \n\t\t{\t\"route_schedule_vehicle_id\":\"525-4-12\",\n\t\t\t\"contact_email\":\"duyu@Ctrip.com\",\n\t\t\t\"address\":\"\",\n\t\t\t\"operator_id\":\"7\",\n\t\t\t\"is_request\":false,\n\t\t\t\"name\":\"BAI XIN\",\n\t\t\t\"contact_phone\":\"13892868626\",\n\t\t\t\"gender\":\"female\",\n\t\t\t\"is_pickup\":1,\n\t\t\t\"departure_date\":\"07/07/2018\",\n\t\t\t\"note\":\"\",\n\t\t\t\"is_local\":0,\n\t\t\t\"vehicle_seat_id\":\"LOWER-DECK|2A\"},\n\t\t\t\n\t\t{\t\"route_schedule_vehicle_id\":\"525-4-12\",\n\t\t\t\"contact_email\":\"duyu@Ctrip.com\",\n\t\t\t\"address\":\"\",\n\t\t\t\"operator_id\":\"7\",\n\t\t\t\"is_request\":false,\n\t\t\t\"name\":\"XIAO BAISONG\",\n\t\t\t\"contact_phone\":\"13892868626\",\n\t\t\t\"gender\":\"male\",\n\t\t\t\"is_pickup\":1,\n\t\t\t\"departure_date\":\"07/07/2018\",\n\t\t\t\"note\":\"\",\n\t\t\t\"is_local\":0,\n\t\t\t\"vehicle_seat_id\":\"LOWER-DECK|3A\"\n\t\t\t\n\t\t}\n\t]\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4 - 2  Seat layout Legacy",
+			"request": {
+				"url": {
+					"raw": "https://bookmebus.com/api/v1/vehicle_seat_availabilities?route_schedule_vehicle_id=703&on_date=07/07/2018",
+					"protocol": "https",
+					"host": [
+						"bookmebus",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"vehicle_seat_availabilities"
+					],
+					"query": [
+						{
+							"key": "route_schedule_vehicle_id",
+							"value": "703",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "on_date",
+							"value": "07/07/2018",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer xxxx",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3 - 2 Search Result Legacy",
+			"request": {
+				"url": {
+					"raw": "https://bookmebus.com/api/v1/ticket_searches?from=Phnom Penh&to=Siem Reap&on_date=07/07/2018",
+					"protocol": "https",
+					"host": [
+						"bookmebus",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ticket_searches"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "Phnom Penh",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "to",
+							"value": "Siem Reap",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "on_date",
+							"value": "07/07/2018",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer xxxxx",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
