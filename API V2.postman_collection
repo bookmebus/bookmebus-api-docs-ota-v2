@@ -2,16 +2,16 @@
 	"variables": [],
 	"info": {
 		"name": "BookMeBus Agent API",
-		"_postman_id": "ad2847d1-510c-2d5d-ca43-a9bf2e487c64",
+		"_postman_id": "e0ce7861-202a-cfdd-d9d2-98555e13f2a5",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:3000/oauth/token",
+			"name": "1 - Authenticate client",
 			"request": {
 				"url": {
-					"raw": "http://localhost:3000/oauth/token?grant_type=client_credentials&client_id=x&client_secret=x",
+					"raw": "http://localhost:3000/oauth/token?grant_type=client_credentials&client_id=your_app_id&client_secret=your_app_secret",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,13 +30,13 @@
 						},
 						{
 							"key": "client_id",
-							"value": "x",
+							"value": "your_app_id",
 							"equals": true,
 							"description": ""
 						},
 						{
 							"key": "client_secret",
-							"value": "x",
+							"value": "your_app_secret",
 							"equals": true,
 							"description": ""
 						}
@@ -45,31 +45,13 @@
 				},
 				"method": "POST",
 				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "tran_id",
-							"value": "12124260",
-							"description": "",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "hash",
-							"value": "69j7V+8B/ywey6K0PYmwPPkBep1cnN+eY+lwKDEQNJ9l3t9Jc7N3FjK3W+xmaFLnFt4XIbdvUM2EQBU6wjR/Sg==",
-							"description": "",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
+				"body": {},
 				"description": "1 - Authenticate app using client  with Client Id  and Client Secret. You should receive the credential after signing BookMeBus OTA agreement.\n\n\n// Example ClientID/ClientSecret\n\nApp ID: f18e4288eb6cdddd24a725591cc9c3a14204bf57636ff6162c407e5ef6078a03\nApp Secret: de3b8f799733d8e1fec2443e0302d879ddad81e09143db84103675425a9493a2"
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/v2/trip_locations",
+			"name": "2 - Fetch transit locations",
 			"request": {
 				"url": "http://localhost:3000/api/v2/trip_locations",
 				"method": "GET",
@@ -109,7 +91,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/v2/trip_availabilities?origin_id=1&destination_id=4&on_date=14/4/2020",
+			"name": "3 - Search trip from location with a specific date",
 			"request": {
 				"url": {
 					"raw": "http://localhost:3000/api/v2/trip_availabilities?origin_id=1&destination_id=4&on_date=14/4/2020",
@@ -182,10 +164,10 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/v2/seat_layouts?trip_id=367&from_stop_id=6&to_stop_id=12&on_date=20/10/2018",
+			"name": "4 - Get vehicle layout from a trip on a specific date",
 			"request": {
 				"url": {
-					"raw": "http://localhost:3000/api/v2/seat_layouts?trip_id=367&from_stop_id=6&to_stop_id=12&on_date=20/10/2018",
+					"raw": "http://localhost:3000/api/v2/seat_layouts?trip_id=367&from_stop_id=6&to_stop_id=12&on_date=20/10/2020",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -217,7 +199,7 @@
 						},
 						{
 							"key": "on_date",
-							"value": "20/10/2018",
+							"value": "20/10/2020",
 							"equals": true,
 							"description": ""
 						}
@@ -261,7 +243,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/v2/trip_reservations",
+			"name": "5 - Reserve seats",
 			"request": {
 				"url": "http://localhost:3000/api/v2/trip_reservations",
 				"method": "POST",
@@ -291,7 +273,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/v2/wallet_payments",
+			"name": "6 - Create a wallet payment for your reservation",
 			"request": {
 				"url": {
 					"raw": "http://localhost:3000/api/v2/wallet_payments?reservation_cart_id=iUswMAzwEAztzpuMrvyT8Q8s",
@@ -342,7 +324,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/v2/bmb_wallets",
+			"name": "7 - Confirm your booking  with a payment",
 			"request": {
 				"url": {
 					"raw": "http://localhost:3000/api/v2/bmb_wallets?payment_id=g4G1dv6eSRRSwvzG",
@@ -393,7 +375,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/v2/trip_reservations",
+			"name": "8 - Get your reservation detail",
 			"request": {
 				"url": "http://localhost:3000/api/v2/trip_reservations/iUswMAzwEAztzpuMrvyT8Q8s",
 				"method": "GET",
