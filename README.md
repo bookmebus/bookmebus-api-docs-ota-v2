@@ -12,7 +12,7 @@ There are 2 separated versions of the API.
 
 ### Requirements
 * You need to contact your operator to get the credentials.
-* Chrome Browser with [Postman](https://chrome.google.com/webstore/detail/tabbed-postman-rest-clien/coohjcphdfgbiolnekdpbcijmhambjff?hl=en-US) installed. 
+* Chrome Browser with [Postman](https://chrome.google.com/webstore/detail/tabbed-postman-rest-clien/coohjcphdfgbiolnekdpbcijmhambjff?hl=en-US) installed.
 
 ### Get started
 * Clone the project or download the Postman collection from this repository.
@@ -26,3 +26,5 @@ There are 2 separated versions of the API.
 
 ### Need help!
 For other details, contact the operator representative.
+
+### Connecting API flow
