@@ -28,3 +28,28 @@ There are 2 separated versions of the API.
 For other details, contact the operator representative.
 
 ### Connecting API flow
+
+#### Trip locations
+```GET /api/v2/trip_locations```
+
+<img src="https://raw.githubusercontent.com/limkimsan/bookmebus-api-docs-ota-v2/create_connect_api_flow/screenshots/1-trip-location.PNG" width="400"/>
+
+<img src="https://raw.githubusercontent.com/limkimsan/bookmebus-api-docs-ota-v2/create_connect_api_flow/screenshots/1.2-trip-location.PNG" width="400"/>
+
+
+#### Trip availabilities
+```GET /api/v2/trip_availabilities```
+
+<img src="https://raw.githubusercontent.com/limkimsan/bookmebus-api-docs-ota-v2/create_connect_api_flow/screenshots/2-trip-availabilities.PNG" width="400"/>
+
+
+#### Seat layouts
+```GET /api/v2/seat_layouts```
+
+<img src="https://raw.githubusercontent.com/limkimsan/bookmebus-api-docs-ota-v2/create_connect_api_flow/screenshots/3-seat-layouts.PNG" width="400"/>
+
+
+#### Trip reservations
+```POST /api/v2/trip_reservations```
+
+<img src="https://raw.githubusercontent.com/limkimsan/bookmebus-api-docs-ota-v2/create_connect_api_flow/screenshots/4-trip-reservation.PNG" width="400"/>
