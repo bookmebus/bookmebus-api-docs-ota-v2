@@ -2,7 +2,7 @@
 
 This docs will guide you through OTA API to create your own full featured transit application. The API is a REST with Oauth2 protocol.
 
-You can try the live demo of the API here [https://www.bookmebus.info](https://www.bookmebus.info)
+You can try the live demo of the API here [https://staging.bookmebus.com](https://staging.bookmebus.com)
 
 We provide full integration from development to production. Please contact your Transit Operator partner to get your connection credential for both staging and production.
 
